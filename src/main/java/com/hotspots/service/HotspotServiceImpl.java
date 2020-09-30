@@ -4,7 +4,6 @@ import com.hotspots.dto.Location;
 import com.hotspots.dto.NearHotspot;
 import com.hotspots.model.Hotspot;
 import com.hotspots.model.UserQuery;
-import com.hotspots.model.VisitedHotspot;
 import com.hotspots.repository.HotspotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -12,7 +11,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class HotspotServiceImpl implements HotspotService {

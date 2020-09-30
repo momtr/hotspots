@@ -35,6 +35,11 @@ public class LocationController {
         return new ResponseEntity<>(visitedHotspotService.findAllByHotspotsId(id), HttpStatus.OK);
     }
 
+    @GetMapping("/hotspots/top")
+    public ResponseEntity<Object> getTopHotspots() {
+        return new ResponseEntity<>(visitedHotspotService.findTopHotspots(), HttpStatus.OK);
+    }
+
     @PostMapping("/hotspots")
     public ResponseEntity<Object> postHotspot(@Valid @RequestBody Hotspot hotspot) {
         hotspotService.createHotspot(hotspot);

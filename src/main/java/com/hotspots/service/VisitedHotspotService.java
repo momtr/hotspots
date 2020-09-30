@@ -2,6 +2,7 @@ package com.hotspots.service;
 
 import com.hotspots.dto.HotspotVisit;
 import com.hotspots.dto.NearHotspot;
+import com.hotspots.dto.TopHotspot;
 import com.hotspots.model.UserQuery;
 import com.hotspots.model.VisitedHotspot;
 
@@ -16,5 +17,9 @@ public interface VisitedHotspotService {
     List<VisitedHotspot> findAll();
 
     List<HotspotVisit> findAllByHotspotsId(long id);
+
+    List<TopHotspot> findTopHotspots(int limit);
+
+    List<TopHotspot> findTopHotspots();
 
 }
