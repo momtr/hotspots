@@ -15,6 +15,11 @@
 - headers: `Content-Type: application/json`
 - returns: `List<Hotspot>`
 
+#### get top hotspots
+- method: `GET`
+- url: `/api/v1/hotspots/top`
+- returns: `List<TopHotspot>`
+
 #### get hotspot by id
 - method: `GET`
 - url: `/api/v1/hotspots/{id}`
