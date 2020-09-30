@@ -2,7 +2,7 @@
 
 ## Routes
 
-#### insert hotspot
+#### post hotspot
 - method: `POST`
 - url: `/api/v1/hotspots`
 - body: JSON; `name, longitude, latitude, [description, address, zip, city, phone, url, email, category]`
@@ -13,6 +13,11 @@
 - url: `/api/v1/hotspots`
 - body: JSON; `{ longitude: Double, latitude: Double }`
 - headers: `Content-Type: application/json`
+- returns: `List<Hotspot>`
+
+#### get all hotspots belonging to a certain category
+- method: `GET`
+- url: `/api/v1/hotspots/categories/{category}`
 - returns: `List<Hotspot>`
 
 #### get top hotspots

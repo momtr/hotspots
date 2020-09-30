@@ -55,5 +55,10 @@ public class HotspotServiceImpl implements HotspotService {
         return this.findClosestHotspots(location, HotspotServiceImpl.DEFAULT_LIMIT);
     }
 
+    @Override
+    public List<Hotspot> findAllHotspotsByCategory(String category) {
+        return hotspotRepository.findAllByCategory(category);
+    }
+
 
 }

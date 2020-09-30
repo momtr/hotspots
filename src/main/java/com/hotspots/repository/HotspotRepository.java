@@ -16,6 +16,8 @@ public interface HotspotRepository extends JpaRepository<Hotspot, Long> {
 
     List<Hotspot> findAll();
 
+    List<Hotspot> findAllByCategory(String category);
+
     Optional<Hotspot> findHotspotById(Long id);
 
     @Query("SELECT new com.hotspots.dto.NearHotspot(h.id, h.name, h.description, h.category, h.address, h.zip, h.city, h.email, h.url, h.phone, h.longitude, h.latitude, h.createdAt, SQRT(POW(69.1 * (h.latitude - :geo_lat), 2) + POW(69.1 * (:geo_long - h.longitude) * COS(h.latitude / 57.3), 2)) AS distance) FROM Hotspot h ORDER BY distance")

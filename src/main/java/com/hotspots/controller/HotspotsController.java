@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-public class LocationController {
+public class HotspotsController {
 
     @Autowired
     private HotspotService hotspotService;
@@ -23,6 +23,11 @@ public class LocationController {
     @GetMapping("/hotspots")
     public ResponseEntity<Object> getClosestHotspots(@RequestBody Location location) {
         return new ResponseEntity<>(hotspotService.findClosestHotspots(location, 5), HttpStatus.OK);
+    }
+
+    @GetMapping("/hotspots/categories/{category}")
+    public ResponseEntity<Object> getHotpotsByCategory(@PathVariable String category) {
+        return new ResponseEntity<>(hotspotService.findAllHotspotsByCategory(category), HttpStatus.OK);
     }
 
     @GetMapping("/hotspots/{id}")

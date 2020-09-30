@@ -18,4 +18,6 @@ public interface HotspotService {
 
     List<NearHotspot> findClosestHotspots(Location location);
 
+    List<Hotspot> findAllHotspotsByCategory(String category);
+
 }
